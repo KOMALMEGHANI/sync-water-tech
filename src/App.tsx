@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
+import ClientsPage from './pages/ClientsPage';
 import ProductsPage from './pages/ProductsPage';
 import FAQPage from './pages/FAQPage';
 import TeamPage from './pages/TeamPage';
@@ -23,6 +24,7 @@ type PageType =
   | 'projects:completed'
   | 'projects:ongoing'
   | 'about'
+  | 'clients'
   | 'services'
   | 'products'
   | 'faq'
@@ -111,6 +113,8 @@ function App() {
     switch (currentPage) {
       case 'home':
         return <HomePage onNavigate={handleNavigate} />;
+      case 'clients':
+        return <ClientsPage />;
       case 'projects':
       case 'projects:all':
       case 'projects:completed':

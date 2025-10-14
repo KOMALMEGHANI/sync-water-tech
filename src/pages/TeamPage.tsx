@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, Briefcase, Target, Building2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Mail, Briefcase, Target, Building2, ChevronLeft, ChevronRight, Award, Users } from 'lucide-react';
 import subHeadingImage from '../assets/products/sub-heading.jpg';
 import heroWaterImage from '../assets/products/hero-section.jpg';
 import ourTeamIcon from '../assets/icon/Our Team.png';
@@ -9,6 +9,7 @@ import officeFounderCabin from '../assets/sync-water-tech-new-office-founder-cab
 import officeOutside1 from '../assets/sync-water-tech-new-office-pictures-outside-1.jpg';
 import officeOutside from '../assets/sync-water-tech-new-office-pictures-outside.jpg';
 import officeReception from '../assets/sync-water-tech-new-office-reception.jpg';
+import digitalMonitoring from '../assets/digital-monitoring.jpg';
 
 export default function TeamPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -127,6 +128,39 @@ export default function TeamPage() {
               </div>
             ))}
           </div>
+
+          {/* Legacy/Experience/Team highlight cards */}
+          <div className="mt-14">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="rounded-2xl border border-indigo-200 bg-white p-6 shadow-[0_8px_30px_rgba(99,102,241,0.08)]">
+                <div className="flex flex-col items-center text-center">
+                  <div className="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center mb-3">
+                    <Award className="h-6 w-6 text-indigo-500" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">40-Year Legacy</h3>
+                  <p className="text-gray-600 text-sm">Built on Rajat Engineering's steel staging and chlorination expertise</p>
+                </div>
+              </div>
+              <div className="rounded-2xl border border-indigo-200 bg-white p-6 shadow-[0_8px_30px_rgba(99,102,241,0.08)]">
+                <div className="flex flex-col items-center text-center">
+                  <div className="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center mb-3">
+                    <Briefcase className="h-6 w-6 text-indigo-500" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">27-Year Automation Experience</h3>
+                  <p className="text-gray-600 text-sm">Orbit Engineering's strength in automation and SCADA systems</p>
+                </div>
+              </div>
+              <div className="rounded-2xl border border-indigo-200 bg-white p-6 shadow-[0_8px_30px_rgba(99,102,241,0.08)]">
+                <div className="flex flex-col items-center text-center">
+                  <div className="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center mb-3">
+                    <Users className="h-6 w-6 text-indigo-500" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Multi-Disciplinary Team</h3>
+                  <p className="text-gray-600 text-sm">Engineers, project leads, marketing strategists, and finance experts</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -154,10 +188,7 @@ export default function TeamPage() {
                   className="w-full h-full object-cover transition-opacity duration-500"
                 />
                 
-                {/* Image Caption Overlay */}
-                <div className="absolute top-6 left-6 bg-black bg-opacity-70 text-white px-4 py-2 rounded-full text-lg font-medium">
-                  {officeImages[currentImageIndex].caption}
-                </div>
+                
 
                 {/* Navigation Arrows */}
                 <button
@@ -272,22 +303,85 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className="relative text-white py-16">
-        <img src={subHeadingImage} alt="Careers background" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Don't See the Right Role?
-          </h2>
-          <p className="text-lg text-blue-100 mb-8">
-            We're always looking for talented individuals. Send us your resume and we'll keep you in mind for future opportunities.
-          </p>
-          <a
-            href="mailto:info@syncwatertech@gmail.com"
-            className="inline-block px-8 py-3 bg-white text-[#0073bc] rounded-full font-semibold hover:bg-gray-100 transition-colors"
-          >
-            Email Your Resume
-          </a>
+      
+
+      {/* Callout: Join a Pioneering Force in Water Technology */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 md:p-10">
+            {/* Centered heading like a section title */}
+            <div className="text-center max-w-3xl mx-auto mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                Join a Pioneering Force in <span className="text-[#3b82f6]">Water Technology</span>
+              </h2>
+              <p className="text-gray-600">
+                Are you a mechanical or electrical engineer eager to make an impact?
+              </p>
+            </div>
+
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              <div>
+
+                <div className="space-y-4 text-gray-700">
+                  <div className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-[#3b82f6]"></span>
+                    <p>
+                      Innovate in a dynamic, fast-growing water-tech environment.
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-[#3b82f6]"></span>
+                    <p>
+                      Collaborate with seasoned professionals across technologies—from traditional water treatment systems to advanced automation.
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-[#3b82f6]"></span>
+                    <p>
+                      Build your career through meaningful projects with strong mentorship and competitive benefits.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <p className="text-gray-900 font-semibold">
+                    Ready to be part of a team that shapes sustainable water infrastructure solutions?
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200">
+                  <img
+                    src={digitalMonitoring}
+                    alt="Engineers collaborating with digital water technology"
+                    className="w-full h-72 md:h-80 object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Contact row */}
+            {/* Contact row */}
+            <div className="mt-8 pt-6 border-t border-gray-200 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+              <div className="text-gray-700">
+                <div className="text-gray-900 font-semibold mb-1">Address</div>
+                <div>
+                  12/1 Shalimar Enclave, E-3 Area Colony<br />
+                  Bhopal, Madhya Pradesh, 462016
+                </div>
+              </div>
+              <div className="text-gray-700">
+                <div className="text-gray-900 font-semibold mb-1">Call us:</div>
+                <a href="tel:+919981144987" className="text-[#0073bc] hover:underline">+91 99811 44987</a>
+              </div>
+              <div className="text-gray-700">
+                <div className="text-gray-900 font-semibold mb-1">Write to us:</div>
+                <a href="mailto:info@syncwatertech@gmail.com" className="text-[#0073bc] hover:underline">info@syncwatertech@gmail.com</a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

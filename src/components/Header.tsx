@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import logo2 from '../assets/logo-2.png';
+import textLogo from '../assets/syncwater-tech-logo.png';
 
 interface HeaderProps {
   onNavigate: (page: string) => void;
@@ -26,6 +27,7 @@ export default function Header({ onNavigate, currentPage }: HeaderProps) {
     { label: 'Home', page: 'home' },
     { label: 'Projects', page: 'projects' },
     { label: 'About', page: 'about' },
+    { label: 'Partners', page: 'clients' },
     { label: 'Services', page: 'services' },
     { label: 'Products', page: 'products' },
     { label: 'FAQ', page: 'faq' },
@@ -38,15 +40,14 @@ export default function Header({ onNavigate, currentPage }: HeaderProps) {
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <button
-            className="flex items-center cursor-pointer group"
+            className="flex items-center cursor-pointer group ml-4 sm:ml-8 lg:ml-12 xl:ml-16"
             onClick={() => onNavigate('home')}
             aria-label="Go to home"
           >
-            <img src={logo2} alt="Sync Water Tech Logo" className="h-10 w-auto mr-3 transition-transform duration-300 group-hover:scale-105" />
-            <span className="text-3xl font-bold tracking-tight text-[#0073bc]">SyncWaterTech</span>
+            <img src={textLogo} alt="Sync WaterTech" className="h-7 md:h-8 w-auto" />
           </button>
 
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-3">
             {navItems.map((item) => (
               item.label === 'Projects' ? (
                 <div
@@ -57,13 +58,11 @@ export default function Header({ onNavigate, currentPage }: HeaderProps) {
                   onMouseLeave={() => setProjectsOpen(false)}
                 >
                   <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setProjectsOpen((open) => !open);
+                    onClick={() => {
+                      onNavigate('projects:all');
+                      setProjectsOpen(true);
                     }}
-                    className={`inline-flex items-center gap-1 text-sm font-medium transition-colors ${
-                      currentPage === item.page ? 'text-[#0073bc]' : 'text-gray-700 hover:text-[#0073bc]'
-                    }`}
+                    className={`inline-flex items-center gap-1 text-sm font-medium px-4 py-2 rounded-full text-gray-700 transition-colors hover:bg-[#005a94] hover:text-white`}
                     aria-haspopup="menu"
                     aria-expanded={projectsOpen}
                   >
@@ -101,9 +100,7 @@ export default function Header({ onNavigate, currentPage }: HeaderProps) {
                 <button
                   key={item.page}
                   onClick={() => onNavigate(item.page)}
-                  className={`text-sm font-medium transition-colors ${
-                    currentPage === item.page ? 'text-[#0073bc]' : 'text-gray-700 hover:text-[#0073bc]'
-                  }`}
+                  className={`text-sm font-medium px-4 py-2 rounded-full text-gray-700 transition-colors hover:bg-[#005a94] hover:text-white`}
                 >
                   {item.label}
                 </button>

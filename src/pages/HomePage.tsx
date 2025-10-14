@@ -1,4 +1,6 @@
 import { ArrowRight, Cpu, Cloud, Droplets, Settings, X } from 'lucide-react';
+import iconInnovation from '../assets/icon/Innovation-Driven.png';
+import villageProject from '../assets/village-project.jpg';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import heroGirl from '../assets/hero-village-girl.jpg';
@@ -72,16 +74,34 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
+      {/* Centered intro block like the reference */}
+      <section className="py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <div className="inline-flex items-center gap-2 bg-gray-100 border border-gray-200 text-gray-700 rounded-full px-4 py-2 mb-6 shadow-sm">
+            <img src={iconInnovation} alt="Innovative Technology" className="h-5 w-5" />
+            <span className="text-sm font-medium">Innovative Technology</span>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+            Innovative Tech to{' '}
+            <span className="text-[#3b82f6]">Drive Sustainable Water</span>
+            <br />
+            Management
+          </h2>
+          <div className="max-w-2xl mx-auto">
+            <div className="rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5">
+              <img
+                src={villageProject}
+                alt="Community water access"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Innovative Tech to Drive Sustainable Water Management
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Leveraging advanced automation and cloud-based systems to revolutionize water infrastructure
-            </p>
-          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div className="group bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow">

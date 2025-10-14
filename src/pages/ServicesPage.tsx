@@ -122,7 +122,7 @@ export default function ServicesPage() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow border border-gray-100"
+                className="group bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow border border-gray-100 cursor-pointer transform transition-transform active:scale-95 active:shadow-[0_12px_40px_rgba(0,115,188,0.25)]"
               >
                 <div className="icon-wrap mb-6 mx-auto">
                   {service.image ? (

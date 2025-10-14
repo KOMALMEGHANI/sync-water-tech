@@ -114,7 +114,7 @@ export default function AboutPage() {
             {whyChooseUs.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow"
+                className="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow cursor-pointer transform transition-transform active:scale-95 active:shadow-[0_12px_40px_rgba(0,115,188,0.25)]"
               >
                 <div className="mb-6">
                   <img src={item.image} alt={`${item.title} icon`} className="h-16 w-16 object-contain mx-auto" />

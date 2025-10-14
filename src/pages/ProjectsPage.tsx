@@ -89,38 +89,86 @@ export default function ProjectsPage({ initialFilter = 'all' }: ProjectsPageProp
             <div>
               <div className="flex items-center mb-8">
                 <Clock className="h-8 w-8 text-[#0073bc] mr-3" />
-                <h2 className="text-3xl font-bold text-gray-900">
-                  Ongoing Projects
-                </h2>
+                <h2 className="text-3xl font-bold text-gray-900">Ongoing Projects</h2>
               </div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {ongoingProjects.map((project, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 border border-gray-100"
-                  >
-                    <div className="flex items-start justify-between mb-4">
-                      <h3 className="text-lg font-semibold text-gray-900 flex-1 pr-4">
-                        {project.name}
-                      </h3>
-                      <span className="bg-blue-100 text-[#0073bc] px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap">
-                        In Progress
-                      </span>
-                    </div>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-600">{project.location}</span>
-                        <span className="text-[#0073bc] font-semibold text-lg">
-                          {project.value}
-                        </span>
+
+              {/* Timeline layout */}
+              <div className="relative">
+                {/* center line */}
+                <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-indigo-100 rounded"></div>
+
+                <div className="space-y-10">
+                  {ongoingProjects.map((project, index) => {
+                    const isLeft = index % 2 === 0;
+                    return (
+                      <div key={index} className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative">
+                        {/* dot on center line */}
+                        <div className="hidden lg:block absolute left-1/2 -translate-x-1/2">
+                          <div className="h-5 w-5 rounded-full border-4 border-white bg-indigo-400 shadow ring-2 ring-indigo-200"></div>
+                        </div>
+
+                        {isLeft && (
+                          <div className="lg:pr-16">
+                            <div className="bg-white rounded-2xl border border-indigo-100 shadow-[0_8px_30px_rgba(99,102,241,0.08)] p-6">
+                              <div className="flex items-center justify-between mb-2">
+                                <span className="inline-flex items-center text-xs font-semibold text-indigo-700 bg-indigo-50 border border-indigo-100 px-2 py-1 rounded-full">
+                                  2024–{project.expectedCompletion}
+                                </span>
+                                <span className="text-indigo-700 font-bold">{project.value}</span>
+                              </div>
+                              <h3 className="text-lg font-semibold text-gray-900 mb-1">{project.name}</h3>
+                              <p className="text-gray-500 text-sm mb-2">{project.location}</p>
+                              <div className="text-sm text-gray-600 flex items-center">
+                                <TrendingUp className="h-4 w-4 mr-2" />
+                                Expected: {project.expectedCompletion}
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* spacer for left/right alignment on large screens */}
+                        <div className="hidden lg:block" />
+
+                        {!isLeft && (
+                          <div className="lg:pl-16 lg:col-start-2">
+                            <div className="bg-white rounded-2xl border border-indigo-100 shadow-[0_8px_30px_rgba(99,102,241,0.08)] p-6">
+                              <div className="flex items-center justify-between mb-2">
+                                <span className="inline-flex items-center text-xs font-semibold text-indigo-700 bg-indigo-50 border border-indigo-100 px-2 py-1 rounded-full">
+                                  2024–{project.expectedCompletion}
+                                </span>
+                                <span className="text-indigo-700 font-bold">{project.value}</span>
+                              </div>
+                              <h3 className="text-lg font-semibold text-gray-900 mb-1">{project.name}</h3>
+                              <p className="text-gray-500 text-sm mb-2">{project.location}</p>
+                              <div className="text-sm text-gray-600 flex items-center">
+                                <TrendingUp className="h-4 w-4 mr-2" />
+                                Expected: {project.expectedCompletion}
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* On mobile, show single column cards sequentially */}
+                        <div className="lg:hidden">
+                          <div className="bg-white rounded-2xl border border-indigo-100 shadow p-6">
+                            <div className="flex items-center justify-between mb-2">
+                              <span className="inline-flex items-center text-xs font-semibold text-indigo-700 bg-indigo-50 border border-indigo-100 px-2 py-1 rounded-full">
+                                2024–{project.expectedCompletion}
+                              </span>
+                              <span className="text-indigo-700 font-bold">{project.value}</span>
+                            </div>
+                            <h3 className="text-lg font-semibold text-gray-900 mb-1">{project.name}</h3>
+                            <p className="text-gray-500 text-sm mb-2">{project.location}</p>
+                            <div className="text-sm text-gray-600 flex items-center">
+                              <TrendingUp className="h-4 w-4 mr-2" />
+                              Expected: {project.expectedCompletion}
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex items-center text-gray-600">
-                        <TrendingUp className="h-4 w-4 mr-2" />
-                        Expected: {project.expectedCompletion}
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           )}

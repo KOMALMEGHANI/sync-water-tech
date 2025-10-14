@@ -153,7 +153,7 @@ export default function ProductsPage({ onNavigate }: ProductsPageProps) {
             {productCategories.map((category, index) => (
               <div
                 key={index}
-                className="group bg-gray-50 rounded-2xl shadow-md hover:shadow-lg transition-shadow p-8 border border-gray-100"
+                className="group bg-gray-50 rounded-2xl shadow-md hover:shadow-lg transition-shadow p-8 border border-gray-100 cursor-pointer transform transition-transform active:scale-95 active:shadow-[0_12px_40px_rgba(0,115,188,0.25)]"
               >
                 <div className="icon-wrap mb-6 mx-auto">
                   {category.image ? (
@@ -212,7 +212,7 @@ export default function ProductsPage({ onNavigate }: ProductsPageProps) {
                 {group.items.map((p, pIdx) => (
                   <div
                     key={pIdx}
-                    className={`group bg-white rounded-xl border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden h-full ${
+                    className={`group bg-white rounded-xl border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden h-full cursor-pointer active:scale-95 active:shadow-[0_12px_40px_rgba(0,115,188,0.25)] ${
                       group.category === 'Analyzers & Transmitters' ? 'md:col-span-1' : ''
                     } ${group.category === 'Flow Meters' ? 'min-h-[360px] md:min-h-[380px] px-6' : 'min-h-[320px] md:min-h-[340px] px-4'}`}
                   >
