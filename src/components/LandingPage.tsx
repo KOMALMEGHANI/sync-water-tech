@@ -9,13 +9,13 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Auto-navigate to home after 3 seconds
+    // Auto-navigate to home after 1 second
     const timer = setTimeout(() => {
       setIsVisible(false);
       setTimeout(() => {
         onNavigate('home');
       }, 500); // Small delay for fade out
-    }, 3000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [onNavigate]);

@@ -4,6 +4,54 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global blue glow style for all card-like boxes */
+/* Applies to common rounded card containers across the site */
+@layer components {
+  :where(.bg-white.rounded-xl, .bg-white.rounded-2xl, .bg-gray-50.rounded-xl, .bg-gray-50.rounded-2xl) {
+    transition: box-shadow 250ms ease, transform 250ms ease;
+    box-shadow:
+      0 0 0 1px rgba(59, 130, 246, 0.35),
+      0 12px 30px rgba(0, 115, 188, 0.12);
+  }
+
+  :where(.bg-white.rounded-xl, .bg-white.rounded-2xl, .bg-gray-50.rounded-xl, .bg-gray-50.rounded-2xl):hover {
+    box-shadow:
+      0 0 0 2px rgba(59, 130, 246, 0.55),
+      0 18px 48px rgba(0, 115, 188, 0.22);
+  }
+
+  /* Inner text subtle zoom + blue glow on hover */
+  :where(.bg-white.rounded-xl, .bg-white.rounded-2xl, .bg-gray-50.rounded-xl, .bg-gray-50.rounded-2xl):hover :where(h2, h3, h4, .card-title) {
+    transition: transform 250ms ease, text-shadow 250ms ease;
+    transform: scale(1.02);
+    text-shadow: 0 0 12px rgba(59, 130, 246, 0.35);
+  }
+}
+
+/* Contact item enhancements: call, address, email rows/cards */
+.contact-item {
+  transition: box-shadow 250ms ease, background-color 250ms ease, transform 250ms ease;
+}
+.contact-item:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow:
+    0 0 0 2px rgba(59, 130, 246, 0.55),
+    0 18px 48px rgba(0, 115, 188, 0.22);
+}
+.contact-item:hover :where(h3, p, a, span) {
+  transform: scale(1.02);
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.35);
+}
+
+/* Icon zoom and glow inside contact items */
+.contact-item :where(svg) {
+  transition: transform 250ms ease, filter 250ms ease;
+}
+.contact-item:hover :where(svg) {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.45));
+}
+
 @layer base {
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;

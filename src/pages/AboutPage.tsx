@@ -6,6 +6,7 @@ import iconCommunity from '../assets/icon/Community Focus.png';
 import iconEndToEnd from '../assets/icon/End-to-End Solutions.png';
 import iconResults from '../assets/icon/Results Oriented.png';
 import subHeadingImage from '../assets/products/sub-heading.jpg';
+import villageWaterProject from '../assets/village-water-project.jpg';
 const heroWaterImage = new URL('../assets/products/hero-section.jpg', import.meta.url).href;
 
 export default function AboutPage() {
@@ -93,6 +94,27 @@ export default function AboutPage() {
                 <p className="text-blue-100 leading-relaxed">
                   To be India's most trusted partner in water infrastructure, recognized for technological excellence, environmental responsibility, and unwavering commitment to community welfare.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Community impact visual section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Why Sync WaterTech <span className="text-[#3b82f6]">Stands Apart</span>
+            </h2>
+          </div>
+          <div className="relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5">
+            <img src={villageWaterProject} alt="Community water project" className="w-full h-auto max-h-[460px] object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <div className="bg-white/90 backdrop-blur-sm text-gray-900 rounded-xl px-5 py-4 shadow-lg">
+                <div className="font-semibold">Community Impact</div>
+                <div className="text-sm text-gray-700">Empowering communities with sustainable water access across rural and urban India</div>
               </div>
             </div>
           </div>

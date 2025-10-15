@@ -70,7 +70,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           >
             <h3 className="text-white font-semibold mb-4">Contact Info</h3>
             <ul className="space-y-3">
-              <li className="flex items-start space-x-3">
+              <li className="flex items-start space-x-3 contact-item">
                 <MapPin className="h-5 w-5 text-[#0073bc] flex-shrink-0 mt-0.5" />
                 <a 
                   href="https://maps.google.com/?q=12/1+Shalimar+Enclave,+E-3+Area+Colony+Bhopal,+Madhya+Pradesh,+India+462016"
@@ -84,7 +84,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                   India(Bharat)- 462016
                 </a>
               </li>
-              <li className="flex items-center space-x-3">
+              <li className="flex items-center space-x-3 contact-item">
                 <Phone className="h-5 w-5 text-[#0073bc] flex-shrink-0" />
                 <a 
                   href="tel:+919981144987"
@@ -93,7 +93,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                   +91 99811 44987
                 </a>
               </li>
-              <li className="flex items-center space-x-3">
+              <li className="flex items-center space-x-3 contact-item">
                 <Mail className="h-5 w-5 text-[#0073bc] flex-shrink-0" />
                 <a 
                   href="mailto:info@syncwatertech@gmail.com"

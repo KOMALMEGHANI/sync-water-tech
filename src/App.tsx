@@ -69,7 +69,7 @@ function App() {
     setIsTransitioning(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
-    // Show logo loading for 2 seconds, then navigate
+    // Show logo loading for 1 second, then navigate
     setTimeout(() => {
       setCurrentPage(target);
       setIsTransitioning(false);
@@ -83,7 +83,7 @@ function App() {
           setPendingAnchor(null);
         }, 50);
       }
-    }, 2000); // 2 seconds logo loading
+    }, 1000); // 1 second logo loading
   };
 
   useEffect(() => {

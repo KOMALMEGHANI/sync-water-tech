@@ -65,7 +65,7 @@ export default function ContactPage() {
 
               <div className="space-y-6">
                 <motion.div 
-                  className="flex items-start space-x-4"
+                  className="flex items-start space-x-4 contact-item"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, ease: 'easeOut' }}
@@ -91,7 +91,7 @@ export default function ContactPage() {
                 </motion.div>
 
                 <motion.div 
-                  className="flex items-start space-x-4"
+                  className="flex items-start space-x-4 contact-item"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
@@ -112,7 +112,7 @@ export default function ContactPage() {
                 </motion.div>
 
                 <motion.div 
-                  className="flex items-start space-x-4"
+                  className="flex items-start space-x-4 contact-item"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}

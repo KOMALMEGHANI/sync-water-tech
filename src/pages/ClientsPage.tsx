@@ -128,7 +128,7 @@ export default function ClientsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left contact cards */}
             <div className="space-y-6">
-              <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-sm">
+              <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-sm contact-item">
                 <div className="flex items-start gap-4">
                   <div className="bg-blue-50 text-[#0073bc] p-3 rounded-xl"><Phone className="h-6 w-6" /></div>
                   <div>
@@ -138,7 +138,7 @@ export default function ClientsPage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-sm">
+              <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-sm contact-item">
                 <div className="flex items-start gap-4">
                   <div className="bg-blue-50 text-[#0073bc] p-3 rounded-xl"><Mail className="h-6 w-6" /></div>
                   <div>
@@ -148,7 +148,7 @@ export default function ClientsPage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-sm">
+              <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-sm contact-item">
                 <div className="flex items-start gap-4">
                   <div className="bg-blue-50 text-[#0073bc] p-3 rounded-xl"><MapPin className="h-6 w-6" /></div>
                   <div>
@@ -164,7 +164,7 @@ export default function ClientsPage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-sm">
+              <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-sm contact-item">
                 <div className="flex items-start gap-4">
                   <div className="bg-blue-50 text-[#0073bc] p-3 rounded-xl"><Clock className="h-6 w-6" /></div>
                   <div>
