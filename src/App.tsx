@@ -127,7 +127,8 @@ function App() {
       case 'products':
         return <ProductsPage onNavigate={handleNavigate} />;
       case 'faq':
-        return <FAQPage onNavigate={handleNavigate} />;
+        // Route FAQ to Services with embedded FAQ section
+        return <ServicesPage />;
       case 'team':
         return <TeamPage />;
       case 'contact':

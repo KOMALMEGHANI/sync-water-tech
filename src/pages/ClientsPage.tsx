@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Users, Star } from 'lucide-react';
 import heroWaterImage from '../assets/products/hero-section.jpg';
 import fuji from '../assets/partners/fuji-electric.png';
@@ -48,22 +47,18 @@ export default function ClientsPage() {
         </div>
       </section>
 
-      {/* Auto-scrolling (marquee) logos */}
+      {/* Static logos (no animation) with names */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="overflow-hidden">
-            <motion.div
-              className="flex items-center gap-10 md:gap-14"
-              animate={{ x: ['0%', '-50%'] }}
-              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              style={{ width: '200%' }}
-            >
-              {[...clients, ...clients].map((c, i) => (
-                <div key={`${c.name}-${i}`} className="flex-none bg-white rounded-xl border border-gray-200 p-4 shadow-sm flex items-center justify-center h-24 w-44">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            {clients.map((c) => (
+              <div key={c.name} className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm text-center">
+                <div className="flex items-center justify-center h-24">
                   <img src={c.logo} alt={`${c.name} logo`} className="max-h-12 w-auto object-contain opacity-90" />
                 </div>
-              ))}
-            </motion.div>
+                <div className="mt-3 text-sm font-medium text-gray-700 truncate">{c.name}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -179,7 +174,7 @@ export default function ClientsPage() {
 
             {/* Right form */}
             <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">send us a message</h3>
               {isSubmitted ? (
                 <div className="text-center py-12">
                   <div className="bg-green-100 rounded-full p-4 inline-block mb-4">

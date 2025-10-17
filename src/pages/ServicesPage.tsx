@@ -96,6 +96,25 @@ export default function ServicesPage() {
     'Energy management solutions'
   ];
 
+  const faqs = [
+    {
+      q: 'What services do you provide?',
+      a: 'End‑to‑end water solutions: WTP/STP/ETP design, installation, PLC/SCADA automation, IoT monitoring, and O&M.'
+    },
+    {
+      q: 'Do you offer automation and remote monitoring?',
+      a: 'Yes. We implement PLC panels, sensors, telemetry and secure cloud dashboards for real‑time monitoring and control.'
+    },
+    {
+      q: 'Can you work on turnkey public sector projects?',
+      a: 'Absolutely. We execute multi‑village and municipal schemes with full EPC support and documentation.'
+    },
+    {
+      q: 'How can I request a proposal?',
+      a: 'Use the contact form on the Contact page or call us. Share site details and requirements for a tailored quote.'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       <section className="relative text-white py-20">
@@ -184,6 +203,27 @@ export default function ServicesPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section (moved from FAQ page) */}
+      <section id="faq" className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Frequently Asked Questions</h2>
+            <p className="text-gray-600">Answers to common queries about our products and services</p>
+          </div>
+          <div className="divide-y divide-gray-200 rounded-2xl border border-gray-200 bg-white">
+            {faqs.map((f, i) => (
+              <details key={i} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between">
+                  <h3 className="text-lg font-semibold text-gray-900">{f.q}</h3>
+                  <span className="ml-4 h-6 w-6 rounded-full border border-gray-300 text-gray-500 grid place-items-center group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <p className="mt-3 text-gray-700 leading-relaxed">{f.a}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>

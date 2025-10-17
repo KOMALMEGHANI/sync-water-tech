@@ -30,7 +30,6 @@ export default function Header({ onNavigate, currentPage }: HeaderProps) {
     { label: 'Partners', page: 'clients' },
     { label: 'Services', page: 'services' },
     { label: 'Products', page: 'products' },
-    { label: 'FAQ', page: 'faq' },
     { label: 'Team', page: 'team' },
     { label: 'Contact', page: 'contact' },
   ];

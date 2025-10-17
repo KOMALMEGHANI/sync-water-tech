@@ -68,27 +68,31 @@ export default function HomePage({ onNavigate: _onNavigate }: HomePageProps) {
 
       
 
-      {/* Centered intro block like the reference */}
+      {/* Innovative Tech block: text left, image right */}
       <section className="py-16 bg-white">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 bg-gray-100 border border-gray-200 text-gray-700 rounded-full px-4 py-2 mb-6 shadow-sm">
-            <img src={iconInnovation} alt="Innovative Technology" className="h-5 w-5" />
-            <span className="text-sm font-medium">Innovative Technology</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-6">
-            Innovative Tech to{' '}
-            <span className="text-[#3b82f6]">Drive Sustainable Water</span>
-            <br />
-            Management
-          </h2>
-          <div className="max-w-xl mx-auto">
-            <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5">
-              <img
-                src={villageProject}
-                alt="Community water access"
-                className="w-full h-auto object-cover max-h-[360px]"
-                loading="lazy"
-              />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-gray-100 border border-gray-200 text-gray-700 rounded-full px-4 py-2 mb-6 shadow-sm">
+                <img src={iconInnovation} alt="Innovative Technology" className="h-5 w-5" />
+                <span className="text-sm font-medium">Innovative Technology</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight md:text-left mb-2">
+                Innovative Tech to{' '}
+                <span className="text-[#3b82f6]">Drive Sustainable Water</span>
+                <br />
+                Management
+              </h2>
+            </div>
+            <div className="md:pl-6">
+              <div className="max-w-xl ml-auto rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5">
+                <img
+                  src={villageProject}
+                  alt="Community water access"
+                  className="w-full h-auto object-cover max-h-[360px]"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>
